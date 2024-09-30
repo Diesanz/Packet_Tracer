@@ -1,6 +1,6 @@
-# Ejercicio de Redes con VLAN y PVST
+#Practica 1 Ejercicio de Redes con VLAN y PVST
 
-![Topología de Red](ruta/de/la/imagen.png)
+![Topología de Red](imagenes_ejercicios/practica1.png)
 
 En la figura anterior, en cada PC se indica en el nombre la VLAN a la que pertenece (la letra tras el ID de VLAN es sólo para que los nombres de los PCs sean distintos).
 
