@@ -14,7 +14,7 @@ Además, la red debe ser funcional, permitiendo intercambio de paquetes entre la
 
 ![Topología de Red](imagenes_ejercicios/practica2.png)
 
-Este documento detalla la configuración de **HSRP** (Hot Standby Router Protocol) y **RIP** (Routing Information Protocol) en la red mostrada, que incluye dos routers principales y un router que conecta hacia el ISP. Además, explica cómo se logra la conectividad con el servidor `www.uva.es` simulando un escenario más realista con rutas por defecto y enrutamiento dinámico.
+Este documento detalla la configuración de **HSRP** (Hot Standby Router Protocol) y **RIP** (Routing Information Protocol) en la red mostrada, que incluye dos routers principales y un router que conecta hacia el ISP. Además, explica cómo se logra la conectividad con el servidor `www.uva.es` simulando un escenario más realista con rutas por defecto y enrutamiento dinámico. La red debe se configurada además con los conocimientos aprendidos de la anterior práctica (VLAN y PVST).
 
 ## 1. Configuración de HSRP
 
@@ -47,4 +47,38 @@ Una vez que la configuración de las interfaces esté completada, se debe habili
 - En **To_ISP**, la red que conecta con el servidor www.uva.es (205.205.205.0) no se anuncia a través de **RIP**. Esto simula un entorno más realista donde el **To_ISP** se conecta a Internet a través de un ISP.
   
 Para lograr la conectividad con **www.uva.es** y otros servidores, se debe crear una **ruta por defecto** hacia el ISP en el **To_ISP** y anunciar esta ruta a **Router1** y **Router2** mediante **RIP**.
+Configuración de la Ruta Estática y RIP
+En To_ISP:
 
+Configure una ruta estática hacia el ISP:
+
+```
+ip route 0.0.0.0 0.0.0.0 206.206.206.30
+```
+Configure RIP para anunciar las redes locales y la ruta por defecto:
+
+```
+router rip
+ network 192.168.123.0
+ network 192.168.124.0
+ default-information originate
+```
+En Router1 y Router2, la configuración RIP es similar, solo se anuncian las redes locales. Ejemplo en Router1:
+```
+router rip
+ network 192.168.10.0
+ network 192.168.40.0
+ network 192.168.123.0
+ ```
+ 
+## 3. Verificación
+Después de configurar RIP en todos los routers y las rutas estáticas en To_ISP, puede verificar la conectividad y la configuración ejecutando los siguientes comandos en cada router:
+
+```
+show ip route
+show running-config
+```
+Asegúrese de que los routers anuncien correctamente las redes locales y de que haya conectividad con www.uva.es a través del ISP.
+
+*Notas adicionales
+Recuerde que la red 205.205.205.0 no debe anunciarse en RIP.
