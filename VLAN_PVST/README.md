@@ -13,7 +13,7 @@ La configuración de **HSRP** se realiza para asegurar la alta disponibilidad en
 - En este caso, la configuración de **HSRP** debe realizarse en la **subinterfaz** correspondiente, en lugar de a nivel de interfaz, como se hacía en ejemplos más simples.
 
 Ejemplo de configuración para **Router1** (subinterfaz `GigabitEthernet0/1.10` para la VLAN 10):
-```
+```bash
 interface GigabitEthernet0/1.10
  ip address 192.168.10.2 255.255.255.0
  standby 10 ip 192.168.10.1
