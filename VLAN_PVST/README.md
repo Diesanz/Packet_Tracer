@@ -1,4 +1,4 @@
-#Practica 2 Ejercicio de Redes HSRP
+### Practica 2 Ejercicio de Redes HSRP
 
 ![Topología de Red](/imagenes_ejercicios/practica2.png)
 

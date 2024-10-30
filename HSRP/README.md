@@ -1,4 +1,4 @@
-#Practica 1 Ejercicio de Redes con VLAN y PVST
+### Practica 1 Ejercicio de Redes con VLAN y PVST
 
 ![Topología de Red](/imagenes_ejercicios/practica1.png)
 
