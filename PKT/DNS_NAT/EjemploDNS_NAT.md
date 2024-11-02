@@ -19,19 +19,19 @@ Configuraremos el servidor DNS ubicado en la DMZ, llamado `ns.www`, que será el
 - Información del servidor autoritativo (él mismo).
 - Información de los hosts en el dominio, en este caso, el servidor web `www`.
 
-![alt text](image-5.png)
+![alt text](/PKT/DNS_NAT/imagenes/image-5.png)
 
 ### Servidor DNS Interno
 
 Configuraremos un servidor DNS interno que guardará registros de nombres internos de la corporación (por ejemplo, la impresora `mad1pr01`). Este servidor también almacenará información sobre el servidor de nombres autoritativo del dominio `www` (`ns.www`).
 
-![alt text](image-6.png)
+![alt text](/PKT/DNS_NAT/imagenes/image-6.png)
 
 ### Servidor DNS Externo
 
 Por último, configuraremos un servidor DNS externo, ubicado en Internet, que almacenará la información del servidor autoritativo del dominio `www`.
 
-![alt text](image-7.png)
+![alt text](/PKT/DNS_NAT/imagenes/image-7.png)
 
 ## Verificación del Funcionamiento
 
@@ -50,7 +50,7 @@ NAT es la traducción de direcciones IP de origen o destino en la cabecera IP. U
 1. **Cambio de IP del Servidor DNS Externo**:
    - Cambiar la IP del servidor DNS externo `ns.www` a la dirección IP pública.
 
-   ![alt text](image-8.png)
+   ![alt text](/PKT/DNS_NAT/imagenes/image-8.png)
 
 2. **Configuración de NAT Estático para Servidores**:
    - Asociar direcciones IP internas con sus traducidas en el exterior.
@@ -80,8 +80,8 @@ NAT es la traducción de direcciones IP de origen o destino en la cabecera IP. U
     ```
 4. Comprobación configuración:
     - Comando `show ip nat translations`
-    ![alt text](image-10.png)
+    ![alt text](/PKT/DNS_NAT/imagenes/image-10.png)
     - Comando `show ip nat stadistics`
-    ![alt text](image-9.png)
+    ![alt text](/PKT/DNS_NAT/imagenes/image-9.png)
 ### Conclusiones
 Con esta configuración, hemos implementado exitosamente DNS y NAT en Packet Tracer, y podemos verificar su funcionamiento mediante simulaciones. Es importante tener en cuenta las limitaciones del software y las implicaciones de NAT en redes complejas.
