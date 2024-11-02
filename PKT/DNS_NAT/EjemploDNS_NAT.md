@@ -65,6 +65,17 @@ NAT es la traducción de direcciones IP de origen o destino en la cabecera IP. U
    Router(config-if)# int [interfaz_externa]
    Router(config-if)# ip nat outside
     ```
+    - Ejemplo :
+    ``` bash
+   Router# conf t
+   Router(config)# ip nat inside source static 192.168.200.100  210.0.200.1
+   Router(config)# ip nat inside source static 192.168.200.10  210.0.200.2
+   Router(config)# int gi0/1
+   Router(config-if)# ip nat inside
+   Router(config-if)# int gi0/2
+   Router(config-if)# ip nat outside
+    ```
+
 
 3. Configuración de PAT para la Red Interna:
 - Configurar un rango de direcciones IP internas a traducir mediante una ACL.
@@ -80,8 +91,10 @@ NAT es la traducción de direcciones IP de origen o destino en la cabecera IP. U
     ```
 4. Comprobación configuración:
     - Comando `show ip nat translations`
-    ![alt text](/PKT/DNS_NAT/imagenes/image-10.png)
+
+        ![alt text](/PKT/DNS_NAT/imagenes/image-10.png)
     - Comando `show ip nat stadistics`
-    ![alt text](/PKT/DNS_NAT/imagenes/image-9.png)
+
+        ![alt text](/PKT/DNS_NAT/imagenes/image-9.png)
 ### Conclusiones
 Con esta configuración, hemos implementado exitosamente DNS y NAT en Packet Tracer, y podemos verificar su funcionamiento mediante simulaciones. Es importante tener en cuenta las limitaciones del software y las implicaciones de NAT en redes complejas.
