@@ -85,9 +85,9 @@ interface vlan 30
 ```
 
 - Salida comando `show standby brief en Multilayer Switch 0 `
-    ![alt text](/MLS/imagenes/image.png)
+    ![alt text](/PKT/MLS/imagenes/image.png)
 - Salida comando `show standby brief en Multilayer Switch 1 `
-    ![alt text](/MLS/imagenes/image-1.png)
+    ![alt text](/PKT/MLS/imagenes/image-1.png)
 
 ### 6. Configurar interfaces IP conectadas al router
 
@@ -105,13 +105,13 @@ Recuerde que en RIP debe configurar en cada router únicamente las redes directa
 
 - Multilayer Switch 0
 
-    ![alt text](/MLS/imagenes/image-2.png)
+    ![alt text](/PKT/MLS/imagenes/image-2.png)
 - Multilayer Switch 0
 
-    ![alt text](/MLS/imagenes/image-3.png)
+    ![alt text](/PKT/MLS/imagenes/image-3.png)
 - To_ISP
 
-    ![alt text](/MLS/imagenes/image-4.png)
+    ![alt text](/PKT/MLS/imagenes/image-4.png)
 
 A continuación, realice en To_ISP mediante CLI la siguiente configuración.
 ```

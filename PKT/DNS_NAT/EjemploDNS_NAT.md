@@ -1,5 +1,5 @@
 # Ejemplo de Configuración Sencilla de DNS y NAT en Packet Tracer
-![alt text](/DNS_NAT/imagenes/image-4.png)
+![alt text](/PKT/DNS_NAT/imagenes/image-4.png)
 ## Introducción
 
 En esta práctica, realizaremos una configuración sencilla de DNS y NAT en Packet Tracer, teniendo en cuenta las limitaciones del programa. Trabajaremos con la red correspondiente al fichero de Packet Tracer disponible en el campus virtual.
