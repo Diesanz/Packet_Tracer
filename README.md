@@ -25,6 +25,8 @@ Este repositorio está diseñado para estudiantes de redes que desean practicar 
 2. [PVSTP (Per-VLAN Spanning Tree Protocol)](./VLAN_PVST/)
 3. [ACLs (Access Control Lists)](./PKT/ACLs/)
 4. [WLAN Wifi](./PKT/WLAN_Wifi)
+5. [DNS_NAT](./PKT/DNS_NAT)
+6. [WLAN Wifi](./PKT/WLAN_Wifi)
 
 Cada una de estas carpetas contiene:
 - Un archivo de práctica `.pkt` de Packet Tracer.
