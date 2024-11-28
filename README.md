@@ -28,6 +28,7 @@ Este repositorio está diseñado para estudiantes de redes que desean practicar 
 5. [DNS_NAT](./PKT/DNS_NAT)
 6. [MLS (Multilayer Switching)](./PKT/MLS)
 6. [RIP_EIGRP](./PKT/RIP_Eigrp)
+7. [OSPF](./PKT/OSPF)
 
 Cada una de estas carpetas contiene:
 - Un archivo de práctica `.pkt` de Packet Tracer.
