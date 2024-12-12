@@ -120,8 +120,8 @@ interface GigabitEthernet0/1
 exit
 
 interface GigabitEthernet0/2
-  ip access-group 105 in
-  ip access-group 106 out
+  ip access-group 104 in
+  ip access-group 105 out
 exit
 ```
 
