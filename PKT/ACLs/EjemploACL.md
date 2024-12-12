@@ -45,7 +45,7 @@ access-list 100 permit icmp any 192.168.200.0 0.0.0.255 unreachable
 **Reglas de Entrada (ACL 100):**
 
 ```
-access-list 100 permit ip 192.168.200.0 0.0.0.255 any
+access-list 101 permit ip 192.168.200.0 0.0.0.255 any
 ```
 
 * Permite tráfico solo si tiene IP origen de la red interna.
@@ -57,8 +57,8 @@ Se define la ACL **101** para la red web (200.0.0.0/24), donde está el servidor
 **Reglas de Salida (ACL 101):**
 
 ```
-access-list 101 permit tcp 192.168.200.0 0.0.0.255 host 200.0.0.10 eq 80 
-access-list 101 permit icmp 192.168.200.0 0.0.0.255 200.0.0.0 0.0.0.255 echo
+access-list 102 permit tcp 192.168.200.0 0.0.0.255 host 200.0.0.10 eq 80 
+access-list 102 permit icmp 192.168.200.0 0.0.0.255 200.0.0.0 0.0.0.255 echo
 ```
 
 * Permite tráfico HTTP de la red interna hacia el servidor web (200.0.0.10).
@@ -67,7 +67,7 @@ access-list 101 permit icmp 192.168.200.0 0.0.0.255 200.0.0.0 0.0.0.255 echo
 **Reglas de Entrada (ACL 101):**
 
 ```
-access-list 101 permit ip 200.0.0.0 0.0.0.255 any
+access-list 103 permit ip 200.0.0.0 0.0.0.255 any
 ```
 
 * Permite tráfico solo si tiene IP origen de la red web.
@@ -79,8 +79,8 @@ Se define la ACL **102** para el tráfico de Internet (220.0.0.0/24):
 **Reglas de Salida (ACL 102):**
 
 ```
-access-list 102 permit ip 192.168.200.0 0.0.0.255 any 
-access-list 102 permit tcp host 200.0.0.10 eq www any established
+access-list 104 permit ip 192.168.200.0 0.0.0.255 any 
+access-list 104 permit tcp host 200.0.0.10 eq www any established
 ```
 
 * Permite tráfico de origen en la red interna.
@@ -89,13 +89,13 @@ access-list 102 permit tcp host 200.0.0.10 eq www any established
 **Reglas de Entrada (ACL 102):**
 
 ```
-access-list 102 deny ip 192.168.200.0 0.0.0.255 any
-access-list 102 deny ip 200.0.0.0 0.0.0.255 any
-access-list 102 deny ip 127.0.0.0 0.255.255.255 any
-access-list 102 permit tcp any host 200.0.0.10 eq www
-access-list 102 permit tcp any 192.168.200.0 0.0.0.255 established
-access-list 102 permit icmp any 192.168.200.0 0.0.0.255 echo-reply
-access-list 102 permit icmp any 192.168.200.0 0.0.0.255 unreachable
+access-list 105 deny ip 192.168.200.0 0.0.0.255 any
+access-list 105 deny ip 200.0.0.0 0.0.0.255 any
+access-list 105 deny ip 127.0.0.0 0.255.255.255 any
+access-list 105 permit tcp any host 200.0.0.10 eq www
+access-list 105 permit tcp any 192.168.200.0 0.0.0.255 established
+access-list 105 permit icmp any 192.168.200.0 0.0.0.255 echo-reply
+access-list 105 permit icmp any 192.168.200.0 0.0.0.255 unreachable
 ```
 
 * **Denegar** tráfico de IPs de la red interna, el servidor web, y 127.0.0.0/8.
@@ -111,17 +111,17 @@ Se aplica la ACL correspondiente a cada interfaz:
 ```
 interface GigabitEthernet0/0
   ip access-group 100 in
-  ip access-group 100 out
-exit
-
-interface GigabitEthernet0/1
-  ip access-group 101 in
   ip access-group 101 out
 exit
 
-interface GigabitEthernet0/2
+interface GigabitEthernet0/1
   ip access-group 102 in
-  ip access-group 102 out
+  ip access-group 103 out
+exit
+
+interface GigabitEthernet0/2
+  ip access-group 105 in
+  ip access-group 106 out
 exit
 ```
 
